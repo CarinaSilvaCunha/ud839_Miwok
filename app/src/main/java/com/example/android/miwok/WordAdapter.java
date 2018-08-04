@@ -11,6 +11,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * {@link WordAdapter} is an {@link ArrayAdapter} that can provide the layout for each list item
+ * based on a data source, which is a list of {@link Word} objects.
+ */
 public class WordAdapter extends ArrayAdapter<Word>  {
 
     /**
@@ -46,13 +50,13 @@ public class WordAdapter extends ArrayAdapter<Word>  {
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
         // Get the Miwok translation from the currentWord object and set this text on
         // the Miwok TextView.
-        miwokTextView.setText(currentWord.getMiwokTranslation());
+        miwokTextView.setText(currentWord.getMiwokTranslationId());
 
         // Find the TextView in the list_item.xml layout with the ID default_text_view.
         TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
         // Get the default translation from the currentWord object and set this text on
         // the default TextView.
-        defaultTextView.setText(currentWord.getDefaultTranslation());
+        defaultTextView.setText(currentWord.getDefaultTranslationId());
 
         // Find the ImageView in the list_item.xml layout with the ID image.
         ImageView imageView = (ImageView) listItemView.findViewById(R.id.image);
